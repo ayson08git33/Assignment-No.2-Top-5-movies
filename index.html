@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A L L Y S O N 's Top 5 Favorite Movies</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">A L L Y S O N 's Top 5 Favorite Movies</div>
+    <li><img src="./images/top5.png" alt="Top 5 Banner"></li>
+    <nav>
+      <ul>
+        <li><a href="#forrestgump">Forrest Gump</a></li>
+        <li><a href="#gladiator">Gladiator</a></li>
+        <li><a href="#uncharted">Uncharted</a></li>
+        <li><a href="#extraction">Extraction</a></li>
+        <li><a href="#topgun">Top Gun My Rating</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- FORREST GUMP -->
+    <section class="movie" id="forrestgump">
+      <div class="video-wrapper" data-video="https://www.youtube.com/embed/Mj9IA9tTfio?autoplay=1">
+        <img class="click-to-play" src="./images/Forrest Gump.jpg" alt="Poster of Forrest Gump movie" />
+      </div>
+      <h2>Forrest Gump</h2>
+      <p class="synopsis">Forrest Gump, a kind-hearted man with a low IQ, lives an extraordinary life through historic moments. All the while, he never stops loving his childhood friend, Jenny.</p>
+      <p class="rating">⭐ 8.0/10 My Rating</p>
+    </section>
+
+    <!-- GLADIATOR -->
+    <section class="movie" id="gladiator">
+      <div class="video-wrapper" data-video="https://www.youtube.com/embed/P5ieIbInFpg?autoplay=1">
+        <img class="click-to-play" src="./images/Gladiator.jpg" alt="Poster of Gladiator movie" />
+      </div>
+      <h2>Gladiator</h2>
+      <p class="synopsis">A betrayed Roman general named Maximus becomes a gladiator seeking revenge on a corrupt emperor. He fights for justice and the honor of his murdered family.</p>
+      <p class="rating">⭐ 9.5/10 My Rating</p>
+    </section>
+
+    <!-- UNCHARTED -->
+    <section class="movie" id="uncharted">
+      <div class="video-wrapper" data-video="https://www.youtube.com/embed/eHp3MbsCbMg?autoplay=1">
+        <img class="click-to-play" src="./images/Uncharted.jpg" alt="Poster of Uncharted movie" />
+      </div>
+      <h2>Uncharted</h2>
+      <p class="synopsis">A young treasure hunter, Nathan Drake, teams up with a seasoned adventurer to find a lost fortune. Their quest turns into a dangerous race against ruthless rivals.</p>
+      <p class="rating">⭐ 8.0/10 My Rating</p>
+    </section>
+
+    <!-- EXTRACTION -->
+    <section class="movie" id="extraction">
+      <div class="video-wrapper" data-video="https://www.youtube.com/embed/L6P3nI6VnlY?autoplay=1">
+        <img class="click-to-play" src="./images/Extraction.jpg" alt="Poster of Extraction movie" />
+      </div>
+      <h2>Extraction</h2>
+      <p class="synopsis">A fearless mercenary is hired to rescue a kidnapped boy in a deadly city. He battles relentless enemies while risking everything for the mission.</p>
+      <p class="rating">⭐ 9.3/10 My Rating</p>
+    </section>
+
+    <!-- TOP GUN -->
+    <section class="movie" id="topgun">
+      <div class="video-wrapper" data-video="https://www.youtube.com/embed/qSqVVswa420?autoplay=1">
+        <img class="click-to-play" src="./images/Top Gun.jpg" alt="Poster of Top Gun movie" />
+      </div>
+      <h2>Top Gun</h2>
+      <p class="synopsis">Elite Navy pilot "Maverick" attends the prestigious Fighter Weapons School. Maverick must learn the value of his teamwork as they aim to become the best.</p>
+      <p class="rating">⭐ 9.0/10 My Rating</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Allyson's Top 5 Movies. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.click-to-play').forEach(img => {
+      img.addEventListener('click', () => {
+        const wrapper = img.parentElement;
+        const videoUrl = wrapper.getAttribute('data-video');
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('src', videoUrl);
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'autoplay; encrypted-media');
+        iframe.setAttribute('allowfullscreen', 'true');
+        iframe.style.width = '100%';
+        iframe.style.height = '315px'; // Adjust height if needed
+        wrapper.innerHTML = '';
+        wrapper.appendChild(iframe);
+      });
+    });
+  </script>
+</body>
+</html>
